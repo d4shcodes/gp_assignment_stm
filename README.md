@@ -16,4 +16,4 @@ Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 # 🔍 Ensure mutpy is installed:
 pip show mutpy
 # 🧬 Run mutpy and generate HTML report:
-python .\.venv\Scripts\mut.py --target main.py --unit-test tests/test_main.py --report-html mutpy_report
+python .\.venv\Scripts\mut.py --target calculator_func.py --unit-test tests.test_main --report-html mutpy_report
