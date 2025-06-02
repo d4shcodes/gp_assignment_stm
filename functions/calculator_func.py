@@ -16,7 +16,6 @@ def divide(a, b):
     except ZeroDivisionError:
         return "Error: Division by zero is undefined."
 
-
 def power(a, b):
     return a ** b
 

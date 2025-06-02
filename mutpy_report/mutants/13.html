@@ -21,7 +21,7 @@
     SyntaxHighlighter.all();
     window.setTimeout(function () {
         
-        $('.line.number27').attr('title', 'EXS');
+        $('.line.number26').attr('title', 'EXS');
         
     }, 0);
 </script>
@@ -38,6 +38,8 @@
     <li>module - <code><module 'calculator_func' from 'C:\\Users\\Viejourn\\Python\\gp_assignment_stm\\functions\\calculator_func.py'></code></li>
     <li><span class="label label-success">killed</span> by <code>test_modulus_by_zero (tests.test_main.TestCalculatorFunctions)</code></li>
     
+    <li>duration - 0.001 s</li>
+    
     
     <li>tests run - 4</li>
     
@@ -53,11 +55,11 @@ AssertionError: None != 'Error: Modulus by zero is undefined.'
 <h3>Mutations</h3>
 <ul>
     
-    <li>EXS - line 27</li>
+    <li>EXS - line 26</li>
     
 </ul>
 <h3>Mutant</h3>
-<pre class="brush: python; first-line: 1; highlight: [27]; toolbar: false;">def add(a, b):
+<pre class="brush: python; first-line: 1; highlight: [26]; toolbar: false;">def add(a, b):
     return a + b
 
 
@@ -74,7 +76,6 @@ def divide(a, b):
         return a / b
     except ZeroDivisionError:
         return 'Error: Division by zero is undefined.'
-
 
 def power(a, b):
     return a ** b
