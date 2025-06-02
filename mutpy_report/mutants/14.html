@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MutPy mutation report - mutation #14</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    
+<link href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css" rel="stylesheet" type="text/css" />
+<link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    
+<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js" type="text/javascript"></script>
+<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPython.js" type="text/javascript"></script>
+<script type="text/javascript">
+    SyntaxHighlighter.all();
+    window.setTimeout(function () {
+        
+        $('.line.number47').attr('title', 'COI');
+        
+    }, 0);
+</script>
+
+</head>
+<body>
+    <div class="container">
+        
+<div class="page-header">
+    <h1>Mutation #14</h1>
+</div>
+<h3>Details</h3>
+<ul>
+    <li>module - <code><module 'main' from '.\\main.py'></code></li>
+    <li><span class="label label-danger">survived</span></li>
+    
+    <li>duration - 0.001 s</li>
+    
+    
+    <li>tests run - 8</li>
+    
+</ul>
+
+<h3>Mutations</h3>
+<ul>
+    
+    <li>COI - line 47</li>
+    
+</ul>
+<h3>Mutant</h3>
+<pre class="brush: python; first-line: 1; highlight: [47]; toolbar: false;">'''
+Simple CLI Calculator App
+Provides basic arithmetic operations: addition, subtraction, multiplication, division, exponentiation, and modulus.
+Prepared by : sofea, amirah, dinesh raj & dashen
+'''
+
+def add(a, b):
+    return a + b
+
+
+def subtract(a, b):
+    return a - b
+
+
+def multiply(a, b):
+    return a * b
+
+
+def divide(a, b):
+    try:
+        return a / b
+    except ZeroDivisionError:
+        return 'Error: Division by zero is undefined.'
+
+def power(a, b):
+    return a ** b
+
+
+def modulus(a, b):
+    try:
+        return a % b
+    except ZeroDivisionError:
+        return 'Error: Modulus by zero is undefined.'
+
+
+def main():
+    operations = {\
+        '1': ('Add', add), \
+        '2': ('Subtract', subtract), \
+        '3': ('Multiply', multiply), \
+        '4': ('Divide', divide), \
+        '5': ('Power', power), \
+        '6': ('Modulus', modulus)}
+    
+    
+    print('Welcome to the Calculator App!')
+    while not True:
+        print('\nSelect an operation:')
+        for (key, (name, _)) in operations.items():
+            print(f'  {key}. {name}')
+        print('  q. Quit')
+        
+        choice = input('Enter choice: ').strip()
+        if choice.lower() == 'q':
+            print('Goodbye!')
+            break
+        
+        if choice not in operations:
+            print('Invalid choice. Please try again.')
+            continue
+        
+        try:
+            num1 = float(input('Enter first number: '))
+            num2 = float(input('Enter second number: '))
+        except ValueError:
+            print('Invalid input. Please enter numeric values.')
+            continue
+        
+        (operation_name, operation_func) = operations[choice]
+        result = operation_func(num1, num2)
+        print(f'Result of {operation_name}({num1}, {num2}) = {result}')
+
+
+if __name__ == '__main__':
+    main()</pre>
+
+    </div>
+</body>
+</html>
