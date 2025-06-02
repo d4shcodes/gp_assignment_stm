@@ -21,7 +21,7 @@
     SyntaxHighlighter.all();
     window.setTimeout(function () {
         
-        $('.line.number54').attr('title', 'ROR');
+        $('.line.number58').attr('title', 'ROR');
         
     }, 0);
 </script>
@@ -38,8 +38,6 @@
     <li>module - <code><module 'main' from '.\\main.py'></code></li>
     <li><span class="label label-danger">survived</span></li>
     
-    <li>duration - 0.008 s</li>
-    
     
     <li>tests run - 8</li>
     
@@ -48,15 +46,16 @@
 <h3>Mutations</h3>
 <ul>
     
-    <li>ROR - line 54</li>
+    <li>ROR - line 58</li>
     
 </ul>
 <h3>Mutant</h3>
-<pre class="brush: python; first-line: 1; highlight: [54]; toolbar: false;">'''
+<pre class="brush: python; first-line: 1; highlight: [58]; toolbar: false;">'''
 Simple CLI Calculator App
 Provides basic arithmetic operations: addition, subtraction, multiplication, division, exponentiation, and modulus.
 Prepared by : sofea, amirah, dinesh raj & dashen
 '''
+
 
 def add(a, b):
     return a + b
@@ -75,6 +74,7 @@ def divide(a, b):
         return a / b
     except ZeroDivisionError:
         return 'Error: Division by zero is undefined.'
+
 
 def power(a, b):
     return a ** b
@@ -98,6 +98,7 @@ def main():
     
     
     print('Welcome to the Calculator App!')
+    
     while True:
         print('\nSelect an operation:')
         for (key, (name, _)) in operations.items():
@@ -105,24 +106,31 @@ def main():
         print('  q. Quit')
         
         choice = input('Enter choice: ').strip()
+        
         if choice.lower() != 'q':
             print('Goodbye!')
             break
         
         if choice not in operations:
-            print('Invalid choice. Please try again.')
+            print(
+                'Invalid choice. Please try again.')
             continue
         
         try:
             num1 = float(input('Enter first number: '))
+            
             num2 = float(input('Enter second number: '))
+        
         except ValueError:
-            print('Invalid input. Please enter numeric values.')
+            print(
+                'Invalid input. Please enter numeric values.')
             continue
         
         (operation_name, operation_func) = operations[choice]
-        result = operation_func(num1, num2)
-        print(f'Result of {operation_name}({num1}, {num2}) = {result}')
+        result = operation_func(
+            num1, num2)
+        print(
+            f'Result of {operation_name}({num1}, {num2}) = {result}')
 
 
 if __name__ == '__main__':

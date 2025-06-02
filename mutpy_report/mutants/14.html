@@ -21,7 +21,7 @@
     SyntaxHighlighter.all();
     window.setTimeout(function () {
         
-        $('.line.number47').attr('title', 'COI');
+        $('.line.number50').attr('title', 'COI');
         
     }, 0);
 </script>
@@ -46,15 +46,16 @@
 <h3>Mutations</h3>
 <ul>
     
-    <li>COI - line 47</li>
+    <li>COI - line 50</li>
     
 </ul>
 <h3>Mutant</h3>
-<pre class="brush: python; first-line: 1; highlight: [47]; toolbar: false;">'''
+<pre class="brush: python; first-line: 1; highlight: [50]; toolbar: false;">'''
 Simple CLI Calculator App
 Provides basic arithmetic operations: addition, subtraction, multiplication, division, exponentiation, and modulus.
 Prepared by : sofea, amirah, dinesh raj & dashen
 '''
+
 
 def add(a, b):
     return a + b
@@ -73,6 +74,7 @@ def divide(a, b):
         return a / b
     except ZeroDivisionError:
         return 'Error: Division by zero is undefined.'
+
 
 def power(a, b):
     return a ** b
@@ -96,6 +98,7 @@ def main():
     
     
     print('Welcome to the Calculator App!')
+    
     while not True:
         print('\nSelect an operation:')
         for (key, (name, _)) in operations.items():
@@ -103,24 +106,31 @@ def main():
         print('  q. Quit')
         
         choice = input('Enter choice: ').strip()
+        
         if choice.lower() == 'q':
             print('Goodbye!')
             break
         
         if choice not in operations:
-            print('Invalid choice. Please try again.')
+            print(
+                'Invalid choice. Please try again.')
             continue
         
         try:
             num1 = float(input('Enter first number: '))
+            
             num2 = float(input('Enter second number: '))
+        
         except ValueError:
-            print('Invalid input. Please enter numeric values.')
+            print(
+                'Invalid input. Please enter numeric values.')
             continue
         
         (operation_name, operation_func) = operations[choice]
-        result = operation_func(num1, num2)
-        print(f'Result of {operation_name}({num1}, {num2}) = {result}')
+        result = operation_func(
+            num1, num2)
+        print(
+            f'Result of {operation_name}({num1}, {num2}) = {result}')
 
 
 if __name__ == '__main__':

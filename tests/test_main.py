@@ -1,6 +1,7 @@
 # tests/test_main.py
 import unittest
-from main import add, subtract, multiply, divide, power, modulus
+from functions.calculator_func import add, subtract, multiply, divide, power, modulus
+
 
 class TestCalculatorFunctions(unittest.TestCase):
     # TC01: Add(5, 3) → 8.0
@@ -21,7 +22,8 @@ class TestCalculatorFunctions(unittest.TestCase):
 
     # TC05: Divide(10, 0) → "Error: Division by zero is undefined."
     def test_divide_by_zero(self):
-        self.assertEqual(divide(10, 0), "Error: Division by zero is undefined.")
+        self.assertEqual(
+            divide(10, 0), "Error: Division by zero is undefined.")
 
     # TC06: Power(2, 3) → 8.0
     def test_power_normal(self):
@@ -33,7 +35,9 @@ class TestCalculatorFunctions(unittest.TestCase):
 
     # TC08: Modulus(10, 0) → "Error: Modulus by zero is undefined."
     def test_modulus_by_zero(self):
-        self.assertEqual(modulus(10, 0), "Error: Modulus by zero is undefined.")
+        self.assertEqual(
+            modulus(10, 0), "Error: Modulus by zero is undefined.")
+
 
 if __name__ == "__main__":
     unittest.main()

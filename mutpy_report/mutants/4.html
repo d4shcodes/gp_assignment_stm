@@ -21,7 +21,7 @@
     SyntaxHighlighter.all();
     window.setTimeout(function () {
         
-        $('.line.number16').attr('title', 'AOR');
+        $('.line.number10').attr('title', 'AOR');
         
     }, 0);
 </script>
@@ -35,8 +35,10 @@
 </div>
 <h3>Details</h3>
 <ul>
-    <li>module - <code><module 'main' from '.\\main.py'></code></li>
-    <li><span class="label label-success">killed</span> by <code>test_multiply_negative (test_main.TestCalculatorFunctions)</code></li>
+    <li>module - <code><module 'calculator_func' from 'C:\\Users\\Viejourn\\Python\\gp_assignment_stm\\functions\\calculator_func.py'></code></li>
+    <li><span class="label label-success">killed</span> by <code>test_multiply_negative (tests.test_main.TestCalculatorFunctions)</code></li>
+    
+    <li>duration - 0.001 s</li>
     
     
     <li>tests run - 6</li>
@@ -45,7 +47,7 @@
 
 <h3>Exception traceback</h3>
 <pre>Traceback (most recent call last):
-  File "C:\Users\Viejourn\Python\gp_assignment_stm\tests\test_main.py", line 16, in test_multiply_negative
+  File ".\tests\test_main.py", line 17, in test_multiply_negative
     self.assertEqual(multiply(-2, 4), -8.0)
 AssertionError: -1 != -8.0
 </pre>
@@ -53,17 +55,11 @@ AssertionError: -1 != -8.0
 <h3>Mutations</h3>
 <ul>
     
-    <li>AOR - line 16</li>
+    <li>AOR - line 10</li>
     
 </ul>
 <h3>Mutant</h3>
-<pre class="brush: python; first-line: 1; highlight: [16]; toolbar: false;">'''
-Simple CLI Calculator App
-Provides basic arithmetic operations: addition, subtraction, multiplication, division, exponentiation, and modulus.
-Prepared by : sofea, amirah, dinesh raj & dashen
-'''
-
-def add(a, b):
+<pre class="brush: python; first-line: 1; highlight: [10]; toolbar: false;">def add(a, b):
     return a + b
 
 
@@ -81,6 +77,7 @@ def divide(a, b):
     except ZeroDivisionError:
         return 'Error: Division by zero is undefined.'
 
+
 def power(a, b):
     return a ** b
 
@@ -89,49 +86,7 @@ def modulus(a, b):
     try:
         return a % b
     except ZeroDivisionError:
-        return 'Error: Modulus by zero is undefined.'
-
-
-def main():
-    operations = {\
-        '1': ('Add', add), \
-        '2': ('Subtract', subtract), \
-        '3': ('Multiply', multiply), \
-        '4': ('Divide', divide), \
-        '5': ('Power', power), \
-        '6': ('Modulus', modulus)}
-    
-    
-    print('Welcome to the Calculator App!')
-    while True:
-        print('\nSelect an operation:')
-        for (key, (name, _)) in operations.items():
-            print(f'  {key}. {name}')
-        print('  q. Quit')
-        
-        choice = input('Enter choice: ').strip()
-        if choice.lower() == 'q':
-            print('Goodbye!')
-            break
-        
-        if choice not in operations:
-            print('Invalid choice. Please try again.')
-            continue
-        
-        try:
-            num1 = float(input('Enter first number: '))
-            num2 = float(input('Enter second number: '))
-        except ValueError:
-            print('Invalid input. Please enter numeric values.')
-            continue
-        
-        (operation_name, operation_func) = operations[choice]
-        result = operation_func(num1, num2)
-        print(f'Result of {operation_name}({num1}, {num2}) = {result}')
-
-
-if __name__ == '__main__':
-    main()</pre>
+        return 'Error: Modulus by zero is undefined.'</pre>
 
     </div>
 </body>
